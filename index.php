@@ -12,7 +12,7 @@
         <header>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
-                    <div class="navbar-header"><a class="navbar-brand" href="select.php">データ一覧</a></div>
+                    <div class="navbar-header"><a class="navbar-brand" href="select.php">データ登録</a></div>
                 </div>
             </nav>
         </header>
@@ -22,11 +22,12 @@
         <form method="POST" action="insert.php">
             <div class="jumbotron">
                 <fieldset>
-                    <legend>フリーアンケート</legend>
+                    <legend>個人情報登録</legend>
                     <label>名前：<input type="text" name="name"></label><br>
-                    <label>Email：<input type="text" name="email"></label><br>
-                    <label>年齢：<input type="text" name="age"></label><br>
-                    <label><textArea name="naiyou" rows="4" cols="40"></textArea></label><br>
+                    <label>生年月日：<input type="date" name="birth"></label><br>
+                    <label>出身地：<input type="text" name="hometown"></label><br>
+                    <label>職業：<input type="text" name="job"></label><br>
+                    <!-- <label><textArea name="job"></textArea></label><br> -->
                     <input type="submit" value="送信">
                 </fieldset>
             </div>
@@ -36,3 +37,4 @@
 
     </body>
 </html>
+
