@@ -1,4 +1,3 @@
-
 <?php
 //0. SESSION開始！！
 session_start();
@@ -13,8 +12,8 @@ include("funcs.php");
 //    session_regenerate_id(true);
 //    $_SESSION["chk_ssid"] = session_id();
 // }
-sschk();
-
+// sschk();
+//ログイン関連はMVPとして搭載していない。
 
 //２．データ登録SQL作成
 $pdo = db_conn();
@@ -33,13 +32,16 @@ if ($status == false) {
     $view .= '</a>';
     $view .= "　";
     $view .= '<a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">';
+    //削除機能を付与
     $view .= '[<i class="glyphicon glyphicon-remove"></i>削除]';
     $view .= '</a>';
     $view .= '</p>';
   }
 }
 ?>
+<!-- php記述の終わり -->
 
+<!-- html記述の開始 -->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -47,44 +49,49 @@ if ($status == false) {
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>フリーアンケート表示</title>
+  <title>登録データ一覧</title>
   <link rel="stylesheet" href="css/range.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  
+
+  <!-- CSS記述の開始 -->
   <style>
     div {
       padding: 10px;
       font-size: 16px;
     }
-    .family-tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .person {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .person img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  </style>
 
+    .family-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .person img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+  <!-- CSS記述の終了 -->
 </head>
 
 <body id="main">
+
   <!-- Head[Start] -->
   <header>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php">データ登録</a>
-          <a class="navbar-brand" href="login.php">ログイン</a>
-          <a class="navbar-brand" href="logout.php">ログアウト</a>
+          <!-- <a class="navbar-brand" href="login.php">ログイン</a> -->
+          <!-- <a class="navbar-brand" href="logout.php">ログアウト</a> -->
         </div>
       </div>
     </nav>
@@ -94,6 +101,7 @@ if ($status == false) {
   <!-- Main[Start] -->
   <div>
     <div class="container jumbotron"><?= $view ?></div>
+
   </div>
   <!-- Main[End] -->
 
