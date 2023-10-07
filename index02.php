@@ -25,7 +25,7 @@
     <!-- Head[End] -->
 
     <!-- Main[Start] -->
-    <form method="POST" action="insert.php" enctype="multipart/form-data">
+    <form method="POST" action="insert.php">
         <div class="jumbotron">
             <fieldset>
                 <legend>個人情報登録</legend>
@@ -34,7 +34,16 @@
                 <label>出身地：<input type="text" name="hometown"></label><br>
                 <label>職業：<input type="text" name="job"></label><br>
                 <label>写真：<input type="file" name="image"></label><br>
+
+
+
+                <!-- <label for="image">写真をアップロード：</label>
+                <input type="file" name="image" id="image"> -->
+
+
+                <!-- <label><textArea name="job"></textArea></label><br> -->
                 <input type="submit" value="データ登録">
+
             </fieldset>
         </div>
     </form>
@@ -42,3 +51,5 @@
 </body>
 
 </html>
+
+
