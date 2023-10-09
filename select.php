@@ -28,7 +28,7 @@ if ($status == false) {
   while ($r = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $view .= '<p>';
     $view .= '<a href="detail.php?id=' . $r["id"] . '">';
-    $view .= $r["id"] . "|" . $r["name"] . "|" . $r["birth"] . "|" . $r["hometown"] . "|" . $r["job"];
+    $view .= $r["id"] . "|" . $r["name"] . "<br>" . $r["birth"] . "|" . $r["hometown"] . "|" . $r["job"];
     $view .= '</a>';
     $view .= "　";
     $view .= '<a class="btn btn-danger" href="delete.php?id=' . $r["id"] . '">';
@@ -38,6 +38,7 @@ if ($status == false) {
     $view .= '</p>';
   }
 }
+
 ?>
 <!-- php記述の終わり -->
 

@@ -1,0 +1,52 @@
+/* スタイルのリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ツリーのスタイル */
+.tree {
+    width: 100%;
+    padding: 20px;
+}
+
+.tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree .node {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.tree .node:hover {
+    background-color: #ddd;
+}
+
+/* ツリー要素のアイコン */
+.tree li:before {
+    content: "➤";
+    margin-right: 5px;
+    color: #666;
+}
+
+/* 子要素のリスト */
+.tree ul ul {
+    margin-left: 20px;
+}
+
+/* 最後の子要素 */
+.tree ul li:last-child:before {
+    content: "";
+}
