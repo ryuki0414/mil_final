@@ -6,18 +6,34 @@ function h($str)
 }
 
 //DB接続
-function db_conn()
-{
-  try {
-    $db_name = "gs_dbx";    //データベース名
-    $db_id   = "root";      //アカウント名
-    $db_pw   = "";      //パスワード：XAMPPはパスワード無しに修正してください。
-    $db_host = "localhost"; //DBホスト
-    return new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
-  } catch (PDOException $e) {
-    exit('DB Connection Error:' . $e->getMessage());
-  }
+//rocal_ver
+
+// function db_conn()
+// {
+//   try {
+//     $db_name = "gs_dbx";    //データベース名
+//     $db_id   = "root";      //アカウント名
+//     $db_pw   = "";      //パスワード：XAMPPはパスワード無しに修正してください。
+//     $db_host = "localhost"; //DBホスト
+//     return new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
+//   } catch (PDOException $e) {
+//     exit('DB Connection Error:' . $e->getMessage());
+//   }
+// }
+
+//deploy_ver
+
+try {
+  //Password:MAMP='root',XAMPP=''
+  $pdo = new PDO('mysql:dbname=ryuki0414_gs_db_kadai;charset=utf8;host=mysql57.ryuki0414.sakura.ne.jp', 'ryuki0414', 'ryuki0414_');
+  // $pdo = new PDO('mysql:dbname=gs_db_kadai;charset=utf8;host=localhost','root','');
+  //ローカルに存在するファイルをディプロイに行わないと、データベースのみデプロイしても作動しない。
+
+
+} catch (PDOException $e) {
+  exit('DB Connection Error:' . $e->getMessage());
 }
+
 
 //SQLエラー
 function sql_error($stmt)
